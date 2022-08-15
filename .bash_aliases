@@ -16,5 +16,5 @@ if [[ -z $(ls ~/.config | grep nushell) ]]; then
 
   echo "Creating and cloning nushell-files..."
 
-  git clone https://github.com/jondpenton/nushell-files.git ~/.config/nushell/
+  git clone https://github.com/jondpenton-org/dotfiles.git ~/.config/nushell/
 fi
