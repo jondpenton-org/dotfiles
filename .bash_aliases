@@ -1,9 +1,6 @@
 if [[ -z $(ls ~/.config | grep nushell) ]]; then
   while :; do
     _credentials=$(echo "host=github.com" | gp credential-helper get)
-
-    echo $_credentials
-
     _password=$(echo $_credentials | grep password=)
 
     if [[ -n $_password ]]; then
