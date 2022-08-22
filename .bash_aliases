@@ -14,5 +14,5 @@ if [[ -z $(ls ~/.config | grep nushell) ]]; then
   echo "Creating and cloning nushell-files..."
 
   git clone https://github.com/jondpenton-org/nushell-files.git ~/.config/nushell/
-  cp --recursive ~/.dotfiles/.config ~/.config
+  cp ~/.dotfiles/.config/nushell/login.nu ~/.config/nushell/login.nu
 fi
