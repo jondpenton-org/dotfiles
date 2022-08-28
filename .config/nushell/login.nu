@@ -1,5 +1,5 @@
 let-env PATH = (
-  $env.PATH | prepend '/home/gitpod/.local/share/pnpm'
+  $env.PATH | prepend `/home/gitpod/.local/share/pnpm`
 )
 
 if `NU_INITIAL_OVERLAYS` in $env {
