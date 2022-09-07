@@ -13,7 +13,7 @@ if `NU_INITIAL_OVERLAYS` in $env {
   )
 
   if not (
-    $inactive_initial_overlays | empty?
+    $inactive_initial_overlays | is-empty
   ) {
     bash -c $'echo "" >> ($nu.config-path)'
 
@@ -22,9 +22,9 @@ if `NU_INITIAL_OVERLAYS` in $env {
           if $it ends-with `.nu` {
             $it
           } else {
-            $'($it).nu'
+            $"($it).nu"
           }
-            | bash -c $'echo "overlay use ($in)" >> ($nu.config-path)'
+            | bash -c $"echo 'overlay use ($in)' >> ($nu.config-path)"
         };
     nu-reload
   }
