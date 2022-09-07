@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+brew update
+
 if [[ ! $(command -v carapace) ]]; then
   brew tap rsteube/homebrew-tap
   brew install rsteube/tap/carapace
