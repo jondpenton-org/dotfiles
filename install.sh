@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 brew update
-brew upgrade
 
 if [[ ! $(command -v carapace) ]]; then
   brew tap rsteube/homebrew-tap
@@ -9,8 +8,8 @@ if [[ ! $(command -v carapace) ]]; then
 fi
 
 if [[ ! $(command -v nu) ]]; then
+  brew reinstall gcc@11 # Broken dependency
   brew install nushell
-  brew upgrade # For some reason this fixes 'nu: error while loading shared libraries: libgcc_s.so.1: cannot open shared object file: No such file or directory'
 fi
 
 if [[ ! $(command -v starship) ]]; then
