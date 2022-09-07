@@ -2,6 +2,11 @@
 
 brew update
 
+if [[ ! $(command -v carapace) ]]; then
+  brew tap rsteube/homebrew-tap
+  brew install rsteube/tap/carapace
+fi
+
 if [[ ! $(command -v nu) ]]; then
   brew install nushell
 fi
