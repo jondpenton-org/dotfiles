@@ -24,7 +24,7 @@ if `NU_INITIAL_OVERLAYS` in $env {
           } else {
             $'($it).nu'
           }
-            | bash -c $'echo "overlay add ($in)" >> ($nu.config-path)'
+            | bash -c $'echo "overlay use ($in)" >> ($nu.config-path)'
         };
     nu-reload
   }
