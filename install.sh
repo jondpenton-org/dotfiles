@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+brew update
 brew upgrade
 
 if [[ ! $(command -v carapace) ]]; then
