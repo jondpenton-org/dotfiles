@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-brew update
+brew upgrade
 
 if [[ ! $(command -v carapace) ]]; then
   echo 'Installing carapace...'
@@ -9,8 +9,8 @@ if [[ ! $(command -v carapace) ]]; then
 fi
 
 if [[ ! $(command -v nu) ]]; then
-  echo 'Reinstalling gcc...'
-  brew reinstall gcc@11 # Broken dependency
+  # echo 'Reinstalling gcc...'
+  # brew reinstall gcc@11 # Broken dependency
   echo 'Installing nu...'
   # sudo apt-get install --yes gcc-multilib
   # export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu"
