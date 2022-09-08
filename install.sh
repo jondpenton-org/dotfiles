@@ -11,6 +11,7 @@ fi
 if [[ ! $(command -v nu) ]]; then
   # brew reinstall gcc@11 # Broken dependency
   echo 'Installing nu...'
+  apt-get install --yes gcc-multilib
   brew install nushell
 fi
 
