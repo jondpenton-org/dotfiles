@@ -1,22 +1,3 @@
-brew update
-
-if [[ ! $(command -v carapace) ]]; then
-  echo 'Installing carapace...'
-  brew tap rsteube/homebrew-tap
-  brew install rsteube/tap/carapace
-fi
-
-if [[ ! $(command -v nu) ]]; then
-  # brew reinstall gcc@11 # Broken dependency
-  echo 'Installing nu...'
-  brew install nushell
-fi
-
-if [[ ! $(command -v starship) ]]; then
-  echo 'Installing starship...'
-  brew install starship
-fi
-
 if [[ -z $(ls ~/.config | grep nushell) ]]; then
   while :; do
     _credentials=$(echo "host=github.com" | gp credential-helper get)
