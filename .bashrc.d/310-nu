@@ -1,3 +1,8 @@
+#!/usr/bin/env bash
+
+brew tap rsteube/homebrew-tap
+brew install rsteube/tap/carapace starship nushell
+
 if [[ -z $(ls ~/.config | grep nushell) ]]; then
   while :; do
     _credentials=$(echo "host=github.com" | gp credential-helper get)
