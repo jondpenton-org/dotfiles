@@ -2,26 +2,19 @@ brew update
 
 if [[ ! $(command -v carapace) ]]; then
   echo 'Installing carapace...'
-
-  brew tap rsteube/homebrew-tap &&
-    brew install rsteube/tap/carapace &&
-    gp sync-done carapace ||
-    gp sync-await carapace
+  brew tap rsteube/homebrew-tap
+  brew install rsteube/tap/carapace
 fi
 
 if [[ ! $(command -v nu) ]]; then
   # brew reinstall gcc@11 # Broken dependency
   echo 'Installing nu...'
-  brew install nushell &&
-    gp sync-done nu ||
-    gp sync-await nu
+  brew install nushell
 fi
 
 if [[ ! $(command -v starship) ]]; then
   echo 'Installing starship...'
-  brew install starship &&
-    gp sync-done starship ||
-    gp sync-await starship
+  brew install starship
 fi
 
 if [[ -z $(ls ~/.config | grep nushell) ]]; then
@@ -39,6 +32,6 @@ if [[ -z $(ls ~/.config | grep nushell) ]]; then
 
   echo "Creating and cloning nushell-files..."
 
-  git clone https://github.com/jondpenton-org/nushell-files.git ~/.config/nushell/ &&
-    cp ~/.dotfiles/.config/nushell/login.nu ~/.config/nushell/login.nu
+  git clone https://github.com/jondpenton-org/nushell-files.git ~/.config/nushell/
+  cp ~/.dotfiles/.config/nushell/login.nu ~/.config/nushell/login.nu
 fi
