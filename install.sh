@@ -12,8 +12,9 @@ if [[ ! $(command -v nu) ]]; then
   # brew reinstall gcc@11 # Broken dependency
   echo 'Installing nu...'
   # sudo apt-get install --yes gcc-multilib
-  export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu"
+  # export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu"
   brew install nushell
+  brew reinstall nushell # Account for libgcc error
 fi
 
 if [[ ! $(command -v starship) ]]; then
