@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+brew update
 brew tap rsteube/homebrew-tap
 brew install rsteube/tap/carapace starship nushell
 
