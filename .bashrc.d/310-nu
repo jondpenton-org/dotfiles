@@ -4,7 +4,9 @@ brew update
 brew tap rsteube/homebrew-tap
 brew install rsteube/tap/carapace starship nushell
 
-if [[ -z $(ls ~/.config | grep nushell) ]]; then
+ls ~/.config/nushell/env.nu 2>/dev/null
+
+if [[ $? -eq 2 ]]; then
   while :; do
     _credentials=$(echo "host=github.com" | gp credential-helper get)
     _password=$(echo $_credentials | grep password=)
@@ -21,6 +23,6 @@ if [[ -z $(ls ~/.config | grep nushell) ]]; then
 
   mv ~/.config/nushell ~/.config/nushell.1
   git clone https://github.com/jondpenton-org/nushell-files.git ~/.config/nushell/
-  mv ~/.config/nushell.1/* ~/.config/nushell/
-  rm -rf ~/.config/nushell.1/
+  sudo mv ~/.config/nushell.1/* ~/.config/nushell/
+  sudo rm -rf ~/.config/nushell.1/
 fi
