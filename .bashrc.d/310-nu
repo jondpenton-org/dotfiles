@@ -21,7 +21,7 @@ if [[ $? -eq 2 ]]; then
 
   echo "Creating and cloning nushell-files..."
 
-  mv ~/.config/nushell ~/.config/nushell.1
+  sudo mv ~/.config/nushell ~/.config/nushell.1
   git clone https://github.com/jondpenton-org/nushell-files.git ~/.config/nushell/
   sudo mv ~/.config/nushell.1/* ~/.config/nushell/
   sudo rm -rf ~/.config/nushell.1/
